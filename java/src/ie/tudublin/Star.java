@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package ie.tudublin;
 
 import processing.core.PApplet;
@@ -42,7 +43,7 @@ public class Star {
     {
         // constructor chaining
         this(
-            row.getInt("Hab?")== 1 ? true : false,
+            row.getInt("Hab?") == 1 ? true : false,
             row.getString("Display Name"),
             row.getFloat("Distance"),
             row.getFloat("Xg"),
@@ -122,5 +123,8 @@ public class Star {
     public void setAbsMag(float absMag) {
         this.absMag = absMag;
     }
+
+	public Star() {
+	}
     
 }
