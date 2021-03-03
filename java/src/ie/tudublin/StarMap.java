@@ -43,6 +43,7 @@ public class StarMap extends PApplet {
             println(s);
         }
     }
+
     void loadStars()
     {
         Table table = loadTable("HabHYG15ly.csv", "header");
