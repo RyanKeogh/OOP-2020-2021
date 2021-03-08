@@ -68,3 +68,4 @@ public class Audio1 extends PApplet {
         y += random(-10, 10);
         lerpedY = lerp(lerpedY, y, 0.1f);        
     }   
+}
