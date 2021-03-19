@@ -95,6 +95,18 @@ public class Audio1 extends PApplet {
             }   
             case 1:
             {
+                for (int i = 0; i < ab.size(); i++) {
+
+                    float c = map(i, 0, ab.size(), 0, 255);
+                    stroke(c, 255, 255);
+                    lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.1f);
+        
+                    line(i, halfHeight - ab.get(i) * halfHeight, i , halfHeight + ab.get(i) * halfHeight);
+                    sum += abs(ab.get(i));
+                    
+                }
+                average = sum / (float) ab.size();
+                ellipse(width /2 , 100, average * 500, average * 500);
                 break;
             }
             case 2:
@@ -107,6 +119,9 @@ public class Audio1 extends PApplet {
             }
             case 4:
             {
+                average = sum / (float) ab.size();
+                lerpedAverage = lerp(lerpedAverage, average, 0.1f);
+                ellipse(width /2, halfHeight, lerpedAverage * 500, lerpedAverage * 500);
                 break;
             }
             case 5:
