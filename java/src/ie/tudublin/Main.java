@@ -104,9 +104,39 @@ public class Main
         processing.core.PApplet.runSketch( a, new YASC());
     }
 
+    public void practice1()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new practice());
+    }
+
+    public void line()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Line());
+    }
+
+    public void shapes1()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new shapes());
+    }
+
+    public void objects1()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new objects());
+    }
+
+    public void interactivity1()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new interactivity());
+    }
+
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.yasc();
+        main.interactivity1();
     }
 } 
