@@ -4,7 +4,7 @@ import javax.lang.model.util.ElementScanner14;
 import processing.core.PApplet;
 
 public class interactivity extends PApplet {
-    
+    int frame = 0;
     public void settings()
     {
         size(400,400);
@@ -25,7 +25,7 @@ public class interactivity extends PApplet {
         ellipse(mouseX - 20,mouseY - 40, 33,33);
         */
 
-        float x = mouseX;
+        /*float x = mouseX;
         float y = mouseY;
         float ix = width - mouseX; // Inverse X
         float iy = height - mouseY; // Inverse Y
@@ -34,7 +34,7 @@ public class interactivity extends PApplet {
         ellipse(x, height/2, y, y);
         fill(0, 159);
         ellipse(ix, height/2, iy, iy);
-    
+    */
         /*background(204);
         line(mouseX,mouseY,pmouseX,pmouseY);
     */
@@ -58,6 +58,20 @@ public class interactivity extends PApplet {
             ellipse(width/2,height/2,100,100);
         }
     */
-    
+    if (frame > 120) { // If 120 frames since the mouse
+        noLoop(); // was pressed, stop the program
+        background(0); // and turn the background black.
+      } else { // Otherwise, set the background
+        background(204); // to light gray and draw lines
+        line(mouseX, 0, mouseX, 100); // at the mouse position
+        line(0, mouseY, 100, mouseY);
+        frame++;
+      }
+
+    }
+    public void mousePressed()
+    {
+        loop();
+        frame=0;
     }
 }
