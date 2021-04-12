@@ -134,9 +134,22 @@ public class Main
         processing.core.PApplet.runSketch( a, new interactivity());
     }
 
+    public void curves1()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new curves());
+    }
+
+    public void p2()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new practice2());
+    }
+
+
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.interactivity1();
+        main.line();
     }
 } 
