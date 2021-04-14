@@ -1,5 +1,7 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 
 public class YASC extends PApplet {
@@ -14,6 +16,7 @@ public class YASC extends PApplet {
     Player p;
     Health h;
     Ammo a;
+    ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
     public void settings() {
         size(500, 500);
@@ -26,7 +29,10 @@ public class YASC extends PApplet {
     }
 
     public void draw() {
+
+
         background(0);
+        text("Bullets" + bullets.size(), 50,50);
         stroke(255);
         p.update();
         p.render();
@@ -35,6 +41,12 @@ public class YASC extends PApplet {
 
         a.update();
         a.render();
+
+        for(Bullet b:bullets)
+        {
+            b.update();
+            b.render();
+        }
         
         // Check collisions        
         checkCollisions();

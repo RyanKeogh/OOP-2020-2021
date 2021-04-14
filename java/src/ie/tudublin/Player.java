@@ -38,6 +38,22 @@ public class Player {
         yasc.text("Ammo: " + ammo, x + 50, y + 10);
     }
 
+    void shoot()
+    {
+        if(yasc.checkKey(' '))
+        {
+            
+            float dist = 30;
+            Bullet b = new Bullet(yasc,x + (dx * dist),y + (dy * dist),rotation);
+
+            
+
+
+            yasc.bullets.add(b);
+        }
+        
+    }
+
     void update()
     {
         dx = PApplet.sin(rotation);
@@ -61,6 +77,7 @@ public class Player {
         {
             rotation += 0.1f;
         }        
+        shoot();
     }
 
     public float getX() {
