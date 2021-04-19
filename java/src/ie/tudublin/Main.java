@@ -104,78 +104,49 @@ public class Main
         processing.core.PApplet.runSketch( a, new YASC());
     }
 
-    public void practice1()
+    public void strings()
     {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new practice());
+        String s = "I may be hungry, but I sure ain't weird.";
+
+        String a = s.substring(0, 5);
+        String b = s.substring(9, 15);
+        String c = s.substring(34);
+        System.out.println(a);
+        System.out.println(b);
+
+        if (s.startsWith("I may"))
+        {
+            System.out.println("Starts with I may");
+        }
+        if (s.endsWith("weird"))
+        {
+            System.out.println("Ends with weird");
+        }
+        System.out.println(s.toUpperCase());
+
+        int hungryIndex = s.indexOf("hungry");
+        System.out.println(hungryIndex);
+
+        int weirdIndex = s.lastIndexOf("e");
+        System.out.println(weirdIndex);
+
+        String[] words = s.split(" ");
+
+        for(String ss: words)
+        {
+            System.out.println(ss);
+        }
+
+        for(int i = s.length() - 1; i >= 0; i--)
+        {
+            System.out.println(s.substring(i, i + 1));
+        }
+
     }
-
-    public void line()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Line());
-    }
-
-    public void shapes1()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new shapes());
-    }
-
-    public void objects1()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new objects());
-    }
-
-    public void interactivity1()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new interactivity());
-    }
-
-    public void curves1()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new curves());
-    }
-
-    public void p2() //use
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new practice2());
-    }
-
-    public void v() // use
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new vis());
-    }
-
-
-    
-    public void a() //use
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new att());
-    }
-
-    public void project()//use
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new proj());
-    }
-
-    public void project1() //use 
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new proje());
-    }
-
 
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.objects1();
+        main.strings();
     }
 } 
