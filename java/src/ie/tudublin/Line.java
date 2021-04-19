@@ -17,9 +17,11 @@ AudioInput ai; //connectig to AI libraries
 AudioPlayer ap; //connecting to the ap libraries
 AudioBuffer ab; //the samples
 
+float[] lerpedBuffer;
+
     public void settings()//runs once
     {
-        size(400,400);
+        size(400,400, P3D);
         
     } 
     public void setup()//runs once
@@ -30,6 +32,7 @@ AudioBuffer ab; //the samples
         ap.play();
         ab = ap.mix;
         colorMode(HSB);
+        lerpedBuffer = new float[width];
         
     }
 
@@ -52,20 +55,22 @@ AudioBuffer ab; //the samples
         background(0);
        // stroke(255);
         noFill();
-
-        float c = map(average, 0, 1, 0, 255);
+        for( int i=0;i < ab.size(); i++)
+        {
+        float c = map(i, 0, ab.size(), 0, 255);
         stroke(c,255,255);
+        lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.1f);
 
 
 
 
 
 
-        ellipse(width/2,height/2,100 + (lerpedAverage * 500), 100 + (lerpedAverage * 500));
-        ellipse(width/2 - 50,height/2,100 + (lerpedAverage * 500), 100 + (lerpedAverage * 500));
-        ellipse(width/2 + 50,height/2,100 + (lerpedAverage * 500), 100 + (lerpedAverage * 500));
-        ellipse(width/2,height/2 + 50,100 + (lerpedAverage * 500), 100 + (lerpedAverage * 500));
-        ellipse(width/2,height/2 - 50,100 + (lerpedAverage * 500), 100 + (lerpedAverage * 500));
+        ellipse(width/2,height/2 + lerpedBuffer[i] * 100,100 + (lerpedAverage * 500), 100 + (lerpedAverage * 500));
+        ellipse(width/2 - 50,height/2  + lerpedBuffer[i] * 100,100 + (lerpedAverage * 500), 100 + (lerpedAverage * 500));
+        ellipse(width/2 + 50,height/2  + lerpedBuffer[i] * 100,100 + (lerpedAverage * 500), 100 + (lerpedAverage * 500));
+        ellipse(width/2,height/2 + 50  + lerpedBuffer[i] * 100,100 + (lerpedAverage * 500), 100 + (lerpedAverage * 500));
+        ellipse(width/2,height/2 - 50  + lerpedBuffer[i] * 100,100 + (lerpedAverage * 500), 100 + (lerpedAverage * 500));
 
 
         ellipse(width/4,height/4,50 + (lerpedAverage * 500), 50 + (lerpedAverage * 500));
@@ -88,11 +93,11 @@ AudioBuffer ab; //the samples
 
         
         ellipse(width/4, height -height/4,50 + (lerpedAverage * 500), 50 + (lerpedAverage * 500));
-        ellipse( width/4 -25,height - height/4,50 + (lerpedAverage * 1000), 50 + (lerpedAverage * 1000));
-        ellipse( width/4 + 25, height - height/4,50 + (lerpedAverage * 1000), 50 + (lerpedAverage * 1000));
-        ellipse( width/4, height - height/4 + 25,50 + (lerpedAverage * 1000), 50 + (lerpedAverage * 1000));
-        ellipse( width/4, height - height/4 - 25,50 + (lerpedAverage * 1000), 50 + (lerpedAverage * 1000));
-
+        ellipse( width/4 -25,height - height/4,50 + (lerpedAverage * 500), 50 + (lerpedAverage * 500));
+        ellipse( width/4 + 25, height - height/4,50 + (lerpedAverage * 500), 50 + (lerpedAverage * 500));
+        ellipse( width/4, height - height/4 + 25,50 + (lerpedAverage * 500), 50 + (lerpedAverage * 500));
+        ellipse( width/4, height - height/4 - 25,50 + (lerpedAverage * 500), 50 + (lerpedAverage * 500));
+        }
     }
 
 

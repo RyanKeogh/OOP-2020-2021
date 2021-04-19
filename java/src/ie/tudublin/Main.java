@@ -140,16 +140,42 @@ public class Main
         processing.core.PApplet.runSketch( a, new curves());
     }
 
-    public void p2()
+    public void p2() //use
     {
         String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new practice2());
+    }
+
+    public void v() // use
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new vis());
+    }
+
+
+    
+    public void a() //use
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new att());
+    }
+
+    public void project()//use
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new proj());
+    }
+
+    public void project1() //use 
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new proje());
     }
 
 
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.line();
+        main.objects1();
     }
 } 
