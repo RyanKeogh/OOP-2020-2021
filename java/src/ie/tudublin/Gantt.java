@@ -124,7 +124,7 @@ public class Gantt extends PApplet {
     {
         loadTasks();
         printTasks();
-        leftBorder = width * 0.2f;;
+        leftBorder = width * 0.2f;
         border = width * 0.05f;
         colorMode(HSB);
     }

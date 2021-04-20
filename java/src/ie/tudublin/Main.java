@@ -144,9 +144,23 @@ public class Main
 
     }
 
+
+    
+    public void ltp()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new LabTestPrep());
+    }
+
+    public void ls()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new LabTestStar());
+    }
+
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.yasc();
+        main.ls();
     }
 } 
