@@ -23,7 +23,7 @@ public class CafeRubis extends PApplet  {
         printProducts();
        //displayProducts();
         border = height*0.1f;
-        printBill();
+
     }
 
     void loadData()
@@ -101,27 +101,18 @@ public class CafeRubis extends PApplet  {
 
     void displayBill()
     {
-        for(int i=0;i<0; i++)
-        {
-            //Product p = products.get(i);
-            float y =map(i,0,products.size(),width-border-70,height-border-20);
-            Product b = bill.get(i);
-
-            textSize(10);
-            fill(0);
-            text(b.getName(),200,y);
-
-
-        }
+        rectMode(CENTER);
+        fill(255);
+        stroke(0);
+        rect(width-border-150,height/2,200,height/2 + 50);
+        stroke(0);
+        fill(0);
+        textSize(20);
+        text("Bill",width-border-150,height/2 - 150);
+       
     }
 
-    void printBill()
-    {
-        for (Product b: bill)
-        {
-            println(b);
-        }
-    }
+   
 
 
 
