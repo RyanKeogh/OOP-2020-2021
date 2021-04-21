@@ -158,9 +158,15 @@ public class Main
         processing.core.PApplet.runSketch( a, new LabTestStar());
     }
 
+    public void Cafe()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new CafeRubis());
+    }
+
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.ls();
+        main.Cafe();
     }
 } 
