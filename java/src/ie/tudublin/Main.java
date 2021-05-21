@@ -164,9 +164,42 @@ public class Main
         processing.core.PApplet.runSketch( a, new CafeRubis());
     }
 
+    public void po()
+{
+    String[] a = {"MAIN"};
+    processing.core.PApplet.runSketch( a, new proje());
+}
+
+public void visu ()
+{
+    String[] a = {"MAIN"};
+    processing.core.PApplet.runSketch( a, new vis());
+}
+
+
+public void Lines ()
+{
+    String[] a = {"MAIN"};
+    processing.core.PApplet.runSketch( a, new LineVis());
+}
+
+
+public void p ()
+{
+    String[] a = {"MAIN"};
+    processing.core.PApplet.runSketch( a, new practice2());
+}
+
+public void l ()
+{
+    String[] a = {"MAIN"};
+    processing.core.PApplet.runSketch( a, new Line ());
+}
+
+
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.Cafe();
+        main.Lines();
     }
 } 
